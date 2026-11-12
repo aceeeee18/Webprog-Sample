@@ -3,13 +3,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lance Christopher C. Bajar | Developer Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #2a1650 0%, #150f2b 40%, #0b0816 100%);
+            background-attachment: fixed;
+            color: #ffffff;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        a { color: #c9a7f5; }
+
+        main, header, footer {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        section { margin-bottom: 40px; }
+
+        img {
+            display: block;
+            margin: 0 auto 15px auto;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px 16px;
+            border: 1px solid #6b4aa8;
+        }
+
+        th { background-color: #2a1650; }
+
+        ul, ol {
+            list-style-position: inside;
+            padding: 0;
+        }
+
+        h3 { color: #c9a7f5; margin-bottom: 5px; }
+
+        table.skills {
+            width: 100%;
+        }
+
+        table.skills th {
+            width: 28%;
+            text-align: left;
+            vertical-align: top;
+            color: #ffffff;
+        }
+
+        table.skills td {
+            text-align: left;
+        }
+
+        ul.chips {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        ul.chips li {
+            padding: 2px 12px;
+            border: 1px solid #8d63d6;
+            border-radius: 999px;
+            background-color: rgba(141, 99, 214, 0.15);
+        }
+
+
+        .two-col {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+        }
+
+        .two-col > div {
+            flex: 1 1 320px;
+        }
+
+        table.list {
+            width: 100%;
+        }
+
+        table.list th, table.list td {
+            text-align: left;
+            vertical-align: top;
+        }
+
+        table.list td.date {
+            text-align: right;
+            color: #c9a7f5;
+            white-space: nowrap;
+        }
+
+        table.list tr:nth-child(even) td {
+            background-color: rgba(107, 74, 168, 0.12);
+        }
+
+        form label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        form input, form textarea {
+            width: 90%;
+            max-width: 400px;
+            padding: 6px;
+        }
+
+        form button {
+            display: block;
+            margin: 15px auto 0 auto;
+            padding: 8px 20px;
+        }
+    </style>
 </head>
 <body>
-    
-    <H1>This is lanceeeeeeeeeeee</H1>
-    <br>
-    <p> This is my first git hub website </p>
+
+    <header id="home">
+        <h1>Lance Christopher C. Bajar</h1>
+        <h2>My Developer Portfolio</h2>
+        <p>Hi! My nickname is Ace, an aspiring AI security and cloud professional who loves building and securing things.</p>
+        <nav>
+            <a href="#about">About</a> |
+            <a href="#skills">Skills</a> |
+            <a href="#education">Education</a> |
+            <a href="#certifications">Credentials</a> |
+            <a href="#projects">Projects</a> |
+            <a href="#goals">Career Goals</a> |
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <img src="bajar-pic.jpg" alt="Photo of me" width="150">
+            <p>I am an Information Technology student at National University Fairview. I enjoy working with code, networks, and data, and I like learning how systems can be made safer. I am aiming for a career in AI security and cloud, and I join school programming competitions to practice my skills. I am also a consistent Dean's Lister.</p>
+        </section>
+
+        <section id="skills">
+            <h2>My Technical Skills</h2>
+            <table class="skills">
+                <tr>
+                    <th scope="row">Languages</th>
+                    <td>
+                        <ul class="chips">
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>JavaScript</li>
+                            <li>SQL</li>
+                            <li>PowerShell</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">AI / ML</th>
+                    <td>
+                        <ul class="chips">
+                            <li>PyTorch</li>
+                            <li>Scikit-learn</li>
+                            <li>NumPy</li>
+                            <li>Pandas</li>
+                            <li>Matplotlib</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Tools</th>
+                    <td>
+                        <ul class="chips">
+                            <li>VS Code</li>
+                            <li>Kiro</li>
+                            <li>Claude Code</li>
+                            <li>Codex</li>
+                            <li>llama</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Systems / Networking</th>
+                    <td>
+                        <ul class="chips">
+                            <li>Windows</li>
+                            <li>Kali Linux</li>
+                            <li>Cisco Networking Fundamentals</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Automation</th>
+                    <td>
+                        <ul class="chips">
+                            <li>Power Automate</li>
+                            <li>RPA</li>
+                            <li>SharePoint</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="education">
+            <h2>Educational Background</h2>
+            <table>
+                <tr><th>Category</th><th>Details</th></tr>
+                <tr><td>School</td><td>National University Fairview</td></tr>
+                <tr><td>Program</td><td>Bachelor of Science in Information Technology</td></tr>
+                <tr><td>Year Level</td><td>Second Year</td></tr>
+            </table>
+        </section>
+
+        <section id="certifications">
+            <h2>Honors &amp; Certifications</h2>
+            <div class="two-col">
+                <div>
+                    <h3>Honors &amp; Activities</h3>
+                    <table class="list">
+                        <tr><th>Title</th><th>Details</th></tr>
+                        <tr>
+                            <td>Consistent Dean's Lister</td>
+                            <td class="date">Last term GWA: 3.85<br>(first honor equivalent)</td>
+                        </tr>
+                        <tr>
+                            <td>AppBuildersPH Hackathon 2026</td>
+                            <td class="date">Participant</td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <h3>Certifications</h3>
+                    <table class="list">
+                        <tr><th>Title</th><th>Date</th></tr>
+                        <tr>
+                            <td>NetOps Certified Engineer (NTO-101)</td>
+                            <td class="date">Oct 2026</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <article>
+                <h3>Project 1: Facility and IT Maintenance Ticketing System</h3>
+                <p>A web-based system where students and staff of NU Fairview can report facility and IT problems, and maintenance staff can track and resolve them. This is a group project proposal.</p>
+            </article>
+            <article>
+                <h3>Project 2: Personal Developer Portfolio</h3>
+                <p>This website. I built it with HTML to introduce myself, show my skills, and practice using Git and GitHub.</p>
+            </article>
+        </section>
+
+        <section id="goals">
+            <h2>My Career Goals</h2>
+            <ol>
+                <li>Become an AI Security Engineer.</li>
+                <li>Grow my cloud skills and earn more cloud and security certifications.</li>
+                <li>Keep building projects and share them on GitHub.</li>
+            </ol>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Email:
+                <a href="mailto:lanceandlisa123@gmail.com">lanceandlisa123@gmail.com</a>
+            </p>
+            <p>Phone:
+                <a href="tel:+639217266441">+63 921 726 6441</a>
+            </p>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+
+                <button type="button">Send Message</button>
+            </form>
+            <p>Note: This form is a visual prototype only.</p>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 Lance Bajar. All rights reserved.</p>
+        <p>Thanks for visiting my portfolio!</p>
+    </footer>
 
 </body>
 </html>
