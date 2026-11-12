@@ -1,313 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lance Christopher C. Bajar | Developer Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
-            background: linear-gradient(180deg, #2a1650 0%, #150f2b 40%, #0b0816 100%);
-            background-attachment: fixed;
-            color: #ffffff;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Lance Christopher C. Bajar, a BSIT student aiming for a career in AI security and cloud.">
+<meta name="theme-color" content="#0d0820">
+<title>Lance Christopher C. Bajar | Developer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{--card:rgba(255,255,255,.045);--line:rgba(167,139,250,.28);--ink:#f5f1ff;--mute:#b9aedb;--acc:#a78bfa;--acc2:#67e8f9;--mono:"JetBrains Mono",ui-monospace,Consolas,monospace}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px;background:#0d0820}
+body{margin:0;font-family:"Space Grotesk",system-ui,Arial,sans-serif;color:var(--ink);line-height:1.65;text-align:center;
+background:radial-gradient(900px 500px at 15% -5%,rgba(139,92,246,.35),transparent 60%),radial-gradient(700px 500px at 92% 25%,rgba(103,232,249,.12),transparent 60%),linear-gradient(180deg,#160d33 0%,#0d0820 45%,#070412 100%);background-attachment:fixed}
+a{color:var(--acc2)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;background:#fff;color:#000;padding:6px 10px;z-index:20}
 
-        a { color: #c9a7f5; }
+/* header */
+.site{position:sticky;top:0;z-index:10;background:rgba(13,8,32,.78);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--mono);font-weight:500;color:var(--ink);text-decoration:none}.brand span{color:var(--acc2)}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+nav a{display:block;padding:6px 12px;border-radius:999px;color:var(--mute);text-decoration:none;font-size:.92rem}
+nav a:hover{color:var(--ink);background:rgba(167,139,250,.18)}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:6px 12px;font:inherit;cursor:pointer}
 
-        main, header, footer {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+/* hero */
+.hero{padding:90px 0 50px}
+.tag{display:inline-block;font-family:var(--mono);font-size:.8rem;color:var(--acc2);border:1px solid rgba(103,232,249,.4);border-radius:999px;padding:4px 14px}
+h1{font-size:clamp(2.2rem,6vw,4.1rem);line-height:1.1;margin:22px 0 10px;background:linear-gradient(90deg,#fff,#c4b5fd 55%,#f0abfc);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{font-size:clamp(1.1rem,2.6vw,1.5rem);color:var(--acc);margin:0 0 14px}
+.lead{max-width:620px;margin:0 auto 28px;color:var(--mute)}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 24px;border-radius:999px;text-decoration:none;font-weight:500;border:1px solid var(--line);color:var(--ink);background:none;font:inherit;font-weight:500;cursor:pointer}
+.btn.pri{background:linear-gradient(135deg,#8b5cf6,#d946ef);border-color:transparent}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(139,92,246,.35)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:52px}
+.stat small,.eyebrow,th{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+.stat small{display:block;color:var(--acc2)}.stat b{font-weight:500}
 
-        section { margin-bottom: 40px; }
+/* sections */
+section{padding:56px 0}
+.eyebrow{color:var(--acc2);margin:0 0 6px}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 30px}
+h3{margin:0 0 10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
+.about{display:flex;flex-wrap:wrap;gap:30px;justify-content:center;align-items:center;max-width:820px;margin:0 auto}
+.about img{width:190px;height:190px;object-fit:cover;object-position:center 30%;border-radius:24px;border:2px solid var(--acc);box-shadow:0 0 40px rgba(139,92,246,.45)}
+.about .txt{flex:1 1 360px}
+.facts,.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.facts{justify-content:center;margin-top:14px}
+.chips li,.facts li{padding:2px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(139,92,246,.14);font-size:.9rem}
+.skill h3{font-family:var(--mono);font-size:.95rem;color:var(--acc)}
+.skill .chips{justify-content:center}
 
-        img {
-            display: block;
-            margin: 0 auto 15px auto;
-        }
+/* tables */
+.tbl{max-width:760px;margin:0 auto;overflow-x:auto;padding:8px 18px}
+table{width:100%;border-collapse:collapse}
+th,td{padding:13px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td,tr:last-child th{border-bottom:0}
+th{color:var(--mute);font-weight:500}
+td.r{text-align:right;color:var(--acc);white-space:nowrap}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px;align-items:start}
+.two h3{font-family:var(--mono);font-size:.95rem;color:var(--acc);padding-top:14px}
 
-        table {
-            margin: 0 auto;
-            border-collapse: collapse;
-        }
+/* projects + goals */
+.proj .num,.goals li::before{font-family:var(--mono);font-size:1.6rem;color:var(--acc2);display:block}
+.proj .chips{justify-content:center;margin-top:14px}
+.goals{list-style:none;margin:0;padding:0;counter-reset:g;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.goals li{counter-increment:g;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.goals li::before{content:"0" counter(g)}
 
-        th, td {
-            padding: 8px 16px;
-            border: 1px solid #6b4aa8;
-        }
+/* contact */
+.contact{max-width:620px;margin:0 auto}
+.contact p{margin:4px 0}
+form{margin-top:22px;text-align:left}
+label{display:block;margin:12px 0 4px;font-size:.9rem;color:var(--mute)}
+input,textarea{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:rgba(7,4,18,.7);color:var(--ink);font:inherit}
+input:focus,textarea:focus{outline:2px solid var(--acc);border-color:transparent}
+form .btn{display:block;margin:18px auto 0}
+.note{font-size:.82rem;color:var(--mute);text-align:center;margin-top:10px}
+footer{border-top:1px solid var(--line);padding:30px 0 40px;color:var(--mute);font-size:.92rem}
+footer p{margin:4px 0}
 
-        th { background-color: #2a1650; }
-
-        ul, ol {
-            list-style-position: inside;
-            padding: 0;
-        }
-
-        h3 { color: #c9a7f5; margin-bottom: 5px; }
-
-        table.skills {
-            width: 100%;
-        }
-
-        table.skills th {
-            width: 28%;
-            text-align: left;
-            vertical-align: top;
-            color: #ffffff;
-        }
-
-        table.skills td {
-            text-align: left;
-        }
-
-        ul.chips {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        ul.chips li {
-            padding: 2px 12px;
-            border: 1px solid #8d63d6;
-            border-radius: 999px;
-            background-color: rgba(141, 99, 214, 0.15);
-        }
-
-
-        .two-col {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-            justify-content: center;
-        }
-
-        .two-col > div {
-            flex: 1 1 320px;
-        }
-
-        table.list {
-            width: 100%;
-        }
-
-        table.list th, table.list td {
-            text-align: left;
-            vertical-align: top;
-        }
-
-        table.list td.date {
-            text-align: right;
-            color: #c9a7f5;
-            white-space: nowrap;
-        }
-
-        table.list tr:nth-child(even) td {
-            background-color: rgba(107, 74, 168, 0.12);
-        }
-
-        form label {
-            display: block;
-            margin-top: 10px;
-        }
-
-        form input, form textarea {
-            width: 90%;
-            max-width: 400px;
-            padding: 6px;
-        }
-
-        form button {
-            display: block;
-            margin: 15px auto 0 auto;
-            padding: 8px 20px;
-        }
-    </style>
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.js .rv.in{opacity:1;transform:none}
+@media(max-width:820px){
+ .menu{display:block}
+ nav ul{display:none;position:absolute;left:0;right:0;top:64px;flex-direction:column;background:#0d0820;border-bottom:1px solid var(--line);padding:10px 20px 16px}
+ nav ul.open{display:flex}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv{opacity:1;transform:none;transition:none}}
+</style>
 </head>
 <body>
+<a class="skip" href="#about">Skip to content</a>
 
-    <header id="home">
-        <h1>Lance Christopher C. Bajar</h1>
-        <h2>My Developer Portfolio</h2>
-        <p>Hi! My nickname is Ace, an aspiring AI security and cloud professional who loves building and securing things.</p>
-        <nav>
-            <a href="#about">About</a> |
-            <a href="#skills">Skills</a> |
-            <a href="#education">Education</a> |
-            <a href="#certifications">Credentials</a> |
-            <a href="#projects">Projects</a> |
-            <a href="#goals">Career Goals</a> |
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<header class="site" id="home">
+ <div class="wrap bar">
+  <a class="brand" href="#home">Acezzz<span></span></a>
+  <nav aria-label="Main navigation">
+   <button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu</button>
+   <ul id="links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#certifications">Credentials</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#goals">Goals</a></li>
+    <li><a href="#contact">Contact</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
 
-    <hr>
+<main id="main">
+ <div class="wrap">
 
-    <main>
+  <div class="hero">
+   <span class="tag">BSIT · NU Fairview</span>
+   <h1>Lance Christopher C. Bajar</h1>
+   <p class="sub">Building toward AI security &amp; cloud.</p>
+   <p class="lead">Hi! My nickname is Ace. I’m an aspiring AI security and cloud professional who loves building and securing things.</p>
+   <div class="btns">
+    <a class="btn pri" href="#projects">Explore my projects</a>
+    <a class="btn" href="#contact">Contact me</a>
+   </div>
+   <div class="stats">
+    <div class="card stat"><small>Now</small><b>Second-year BSIT student</b></div>
+    <div class="card stat"><small>Focus</small><b>AI security · Cloud</b></div>
+    <div class="card stat"><small>Next</small><b>Let’s build something</b></div>
+   </div>
+  </div>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <img src="bajar-pic.jpg" alt="Photo of me" width="150">
-            <p>I am an Information Technology student at National University Fairview. I enjoy working with code, networks, and data, and I like learning how systems can be made safer. I am aiming for a career in AI security and cloud, and I join school programming competitions to practice my skills. I am also a consistent Dean's Lister.</p>
-        </section>
+  <section id="about">
+   <p class="eyebrow">// 01 about</p>
+   <h2>About Me</h2>
+   <div class="about card rv">
+    <img src="bajar-pic.jpg" alt="Photo of Lance Christopher Bajar" width="190" height="190">
+    <div class="txt">
+     <p>I am an Information Technology student at National University Fairview. I enjoy working with code, networks, and data, and I like learning how systems can be made safer. I am aiming for a career in AI security and cloud, and I join school programming competitions to practice my skills. I am also a consistent Dean’s Lister.</p>
+     <ul class="facts">
+      <li>Cybersecurity-minded</li>
+      <li>Always learning</li>
+      <li>Hackathon participant</li>
+     </ul>
+    </div>
+   </div>
+  </section>
 
-        <section id="skills">
-            <h2>My Technical Skills</h2>
-            <table class="skills">
-                <tr>
-                    <th scope="row">Languages</th>
-                    <td>
-                        <ul class="chips">
-                            <li>Python</li>
-                            <li>Java</li>
-                            <li>JavaScript</li>
-                            <li>SQL</li>
-                            <li>PowerShell</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">AI / ML</th>
-                    <td>
-                        <ul class="chips">
-                            <li>PyTorch</li>
-                            <li>Scikit-learn</li>
-                            <li>NumPy</li>
-                            <li>Pandas</li>
-                            <li>Matplotlib</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Tools</th>
-                    <td>
-                        <ul class="chips">
-                            <li>VS Code</li>
-                            <li>Kiro</li>
-                            <li>Claude Code</li>
-                            <li>Codex</li>
-                            <li>llama</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Systems / Networking</th>
-                    <td>
-                        <ul class="chips">
-                            <li>Windows</li>
-                            <li>Kali Linux</li>
-                            <li>Cisco Networking Fundamentals</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Automation</th>
-                    <td>
-                        <ul class="chips">
-                            <li>Power Automate</li>
-                            <li>RPA</li>
-                            <li>SharePoint</li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
-        </section>
+  <section id="skills">
+   <p class="eyebrow">// 02 toolkit</p>
+   <h2>My Technical Skills</h2>
+   <div class="grid">
+    <article class="card skill rv"><h3>Languages</h3><ul class="chips"><li>Python</li><li>Java</li><li>JavaScript</li><li>SQL</li><li>PowerShell</li></ul></article>
+    <article class="card skill rv"><h3>AI / ML</h3><ul class="chips"><li>PyTorch</li><li>Scikit-learn</li><li>NumPy</li><li>Pandas</li><li>Matplotlib</li></ul></article>
+    <article class="card skill rv"><h3>Tools</h3><ul class="chips"><li>VS Code</li><li>Kiro</li><li>Claude Code</li><li>Codex</li><li>llama</li></ul></article>
+    <article class="card skill rv"><h3>Systems / Networking</h3><ul class="chips"><li>Windows</li><li>Kali Linux</li><li>Cisco Networking Fundamentals</li></ul></article>
+    <article class="card skill rv"><h3>Automation</h3><ul class="chips"><li>Power Automate</li><li>RPA</li><li>SharePoint</li></ul></article>
+   </div>
+  </section>
 
-        <section id="education">
-            <h2>Educational Background</h2>
-            <table>
-                <tr><th>Category</th><th>Details</th></tr>
-                <tr><td>School</td><td>National University Fairview</td></tr>
-                <tr><td>Program</td><td>Bachelor of Science in Information Technology</td></tr>
-                <tr><td>Year Level</td><td>Second Year</td></tr>
-            </table>
-        </section>
+  <section id="education">
+   <p class="eyebrow">// 03 foundation</p>
+   <h2>Educational Background</h2>
+   <div class="card tbl rv">
+    <table>
+     <tr><th scope="row">School</th><td>National University Fairview</td></tr>
+     <tr><th scope="row">Program</th><td>Bachelor of Science in Information Technology</td></tr>
+     <tr><th scope="row">Year Level</th><td>Second Year</td></tr>
+    </table>
+   </div>
+  </section>
 
-        <section id="certifications">
-            <h2>Honors &amp; Certifications</h2>
-            <div class="two-col">
-                <div>
-                    <h3>Honors &amp; Activities</h3>
-                    <table class="list">
-                        <tr><th>Title</th><th>Details</th></tr>
-                        <tr>
-                            <td>Consistent Dean's Lister</td>
-                            <td class="date">Last term GWA: 3.85<br>(first honor equivalent)</td>
-                        </tr>
-                        <tr>
-                            <td>AppBuildersPH Hackathon 2026</td>
-                            <td class="date">Participant</td>
-                        </tr>
-                    </table>
-                </div>
-                <div>
-                    <h3>Certifications</h3>
-                    <table class="list">
-                        <tr><th>Title</th><th>Date</th></tr>
-                        <tr>
-                            <td>NetOps Certified Engineer (NTO-101)</td>
-                            <td class="date">Oct 2026</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
+  <section id="certifications">
+   <p class="eyebrow">// 04 signal</p>
+   <h2>Honors &amp; Certifications</h2>
+   <div class="two">
+    <div class="card rv">
+     <h3>Honors &amp; Activities</h3>
+     <table>
+      <tr><th>Title</th><th>Details</th></tr>
+      <tr><td>Consistent Dean’s Lister</td><td class="r">Last term GWA: 3.85<br>(first honor equivalent)</td></tr>
+      <tr><td>AppBuildersPH Hackathon 2026</td><td class="r">Participant</td></tr>
+     </table>
+    </div>
+    <div class="card rv">
+     <h3>Certifications</h3>
+     <table>
+      <tr><th>Title</th><th>Date</th></tr>
+      <tr><td>NetOps Certified Engineer (NTO-101)</td><td class="r">Oct 2026</td></tr>
+     </table>
+    </div>
+   </div>
+  </section>
 
-        <section id="projects">
-            <h2>My Projects</h2>
-            <article>
-                <h3>Project 1: Facility and IT Maintenance Ticketing System</h3>
-                <p>A web-based system where students and staff of NU Fairview can report facility and IT problems, and maintenance staff can track and resolve them. This is a group project proposal.</p>
-            </article>
-            <article>
-                <h3>Project 2: Personal Developer Portfolio</h3>
-                <p>This website. I built it with HTML to introduce myself, show my skills, and practice using Git and GitHub.</p>
-            </article>
-        </section>
+  <section id="projects">
+   <p class="eyebrow">// 05 selected work</p>
+   <h2>My Projects</h2>
+   <div class="grid">
+    <article class="card proj rv">
+     <span class="num">01</span>
+     <h3>Facility and IT Maintenance Ticketing System</h3>
+     <p>A web-based system where students and staff of NU Fairview can report facility and IT problems, and maintenance staff can track and resolve them.</p>
+     <ul class="chips"><li>Group project</li><li>Proposal</li><li>NU Fairview</li></ul>
+    </article>
+    <article class="card proj rv">
+     <span class="num">02</span>
+     <h3>Personal Developer Portfolio</h3>
+     <p>This website. I built it to introduce myself, show my skills, and practice using Git, GitHub, and Vercel.</p>
+     <ul class="chips"><li>HTML</li><li>CSS</li><li>Git &amp; GitHub</li><li>Vercel</li></ul>
+    </article>
+   </div>
+  </section>
 
-        <section id="goals">
-            <h2>My Career Goals</h2>
-            <ol>
-                <li>Become an AI Security Engineer.</li>
-                <li>Grow my cloud skills and earn more cloud and security certifications.</li>
-                <li>Keep building projects and share them on GitHub.</li>
-            </ol>
-        </section>
+  <section id="goals">
+   <p class="eyebrow">// 06 destination</p>
+   <h2>My Career Goals</h2>
+   <ol class="goals">
+    <li class="rv"><h3>Become an AI Security Engineer</h3><p>Learn how to protect AI systems and the data they use.</p></li>
+    <li class="rv"><h3>Grow my cloud skills</h3><p>Earn more cloud and security certifications.</p></li>
+    <li class="rv"><h3>Keep building</h3><p>Make more projects and share them on GitHub.</p></li>
+   </ol>
+  </section>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>Email:
-                <a href="mailto:lanceandlisa123@gmail.com">lanceandlisa123@gmail.com</a>
-            </p>
-            <p>Phone:
-                <a href="tel:+639217266441">+63 921 726 6441</a>
-            </p>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
+  <section id="contact">
+   <p class="eyebrow">// 07 transmission</p>
+   <h2>Contact Me</h2>
+   <div class="card contact rv">
+    <p>Email: <a href="mailto:lanceandlisa123@gmail.com">lanceandlisa123@gmail.com</a></p>
+    <p>Phone: <a href="tel:+639217266441">+63 921 726 6441</a></p>
+    <form id="form">
+     <label for="yourname">Name</label>
+     <input type="text" id="yourname" name="yourname" required>
+     <label for="message">Message</label>
+     <textarea id="message" name="message" rows="5" required></textarea>
+     <button class="btn pri" type="submit">Compose email</button>
+    </form>
+    <p class="note">This opens your email app with the message ready. Nothing is sent until you press send there.</p>
+   </div>
+  </section>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5"></textarea>
+ </div>
+</main>
 
-                <button type="button">Send Message</button>
-            </form>
-            <p>Note: This form is a visual prototype only.</p>
-        </section>
+<footer>
+ <div class="wrap">
+  <p>&copy; 2026 Acezzz. All rights reserved.</p>
+  <p>Thanks for visiting my portfolio! <a href="#home">Back to top ↑</a></p>
+ </div>
+</footer>
 
-    </main>
-
-    <hr>
-
-    <footer>
-        <p>&copy; 2026 Lance Bajar. All rights reserved.</p>
-        <p>Thanks for visiting my portfolio!</p>
-    </footer>
-
+<script>
+const links=document.getElementById('links'),menu=document.getElementById('menu');
+menu.addEventListener('click',()=>{const o=links.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.getElementById('form').addEventListener('submit',e=>{
+ e.preventDefault();
+ const n=document.getElementById('yourname').value,m=document.getElementById('message').value;
+ location.href='mailto:lanceandlisa123@gmail.com?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(m+'\n\n'+n);
+});
+</script>
 </body>
 </html>
