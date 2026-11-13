@@ -190,12 +190,6 @@ td.r{color:var(--acc);text-align:right}
 /* ---------- Contact ---------- */
 .contact{max-width:640px}
 .contact p{margin:4px 0}
-form{margin-top:22px}
-label{display:block;margin:14px 0 5px;font-size:.9rem;color:var(--mute)}
-input,textarea{width:100%;padding:11px 13px;border-radius:10px;border:1px solid var(--line);background:#030705;color:var(--ink);font:inherit}
-input:focus,textarea:focus{border-color:var(--acc)}
-form .btn{margin-top:20px}
-.note{font-size:.84rem;color:var(--mute);margin-top:12px}
 footer{border-top:1px solid var(--line2);padding:30px 0 calc(40px + env(safe-area-inset-bottom));color:var(--mute);font-size:.93rem}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer p{margin:0}
@@ -303,12 +297,12 @@ footer p{margin:0}
    <div class="stats st" style="--i:5">
     <div class="stat"><small>now</small><b>Second-year BSIT student</b></div>
     <div class="stat"><small>focus</small><b>AI security · Cloud</b></div>
-    <div class="stat"><small>next</small><b>Let’s hold hands and build something</b></div>
+    <div class="stat"><small>next</small><b>Let’s build something</b></div>
    </div>
   </div>
 
   <section id="about">
-   <p class="kicker">This is me! Welcome to my Life</p>
+   <p class="kicker">This is me! Welcome to my Life.</p>
    <h2>All about me<i>.</i></h2>
    <div class="about">
     <div class="photo">
@@ -327,7 +321,7 @@ footer p{margin:0}
   </section>
 
   <section id="skills">
-   <p class="kicker">These are my toolkits</p>
+   <p class="kicker">These are my toolkits.</p>
    <h2>Technical skills<i>.</i></h2>
    <div class="grid">
     <article class="card skill"><h3>Languages</h3><ul class="chips"><li>Python</li><li>Java</li><li>JavaScript</li><li>SQL</li><li>PowerShell</li></ul></article>
@@ -351,15 +345,14 @@ footer p{margin:0}
   </section>
 
   <section id="certifications">
-   <p class="kicker">My certifications</p>
+   <p class="kicker">Proof of the work</p>
    <h2>Honors &amp; certifications<i>.</i></h2>
    <div class="two">
     <div class="card">
      <h3>Honors &amp; activities</h3>
      <table>
       <tr><th>Title</th><th>Details</th></tr>
-      <tr><td>Consistent Dean’s Lister</td><td class="r">Last term GWA: 3.85<br>(First honor)</td></tr>
-      <tr><td>Consistent With Honor's</td><td class="r">Since Grade 7 to 12<td></tr>
+      <tr><td>Consistent Dean’s Lister</td><td class="r">Last term GWA: 3.85<br>(first honor equivalent)</td></tr>
       <tr><td>AppBuildersPH Hackathon 2026</td><td class="r">Participant</td></tr>
      </table>
     </div>
@@ -368,14 +361,13 @@ footer p{margin:0}
      <table>
       <tr><th>Title</th><th>Date</th></tr>
       <tr><td>NetOps Certified Engineer (NTO-101)</td><td class="r">Oct 2026</td></tr>
-      <tr><td>Enabling Cloud-Ready Teams: GCP Infrastructure Fundamentals </td><td class="r">March 19 2026</td></tr>
      </table>
     </div>
    </div>
   </section>
 
   <section id="projects">
-   <p class="kicker">These is the only projects I have</p>
+   <p class="kicker">From “what if” to “here it is”</p>
    <h2>My projects<i>.</i></h2>
    <p class="sec-sub">Things I have built or am building. More will land here as I ship them.</p>
 
@@ -418,19 +410,13 @@ footer p{margin:0}
   </section>
 
   <section id="contact">
-   <p class="kicker">Don't be shy to email me</p>
+   <p class="kicker">Good things start with a hello</p>
    <h2>Let’s connect<i>.</i></h2>
    <div class="card contact">
+    <h3>Lance Christopher C. Bajar</h3>
     <p>Email: <a href="mailto:lanceandlisa123@gmail.com">lanceandlisa123@gmail.com</a></p>
     <p>Phone: <a href="tel:+639217266441">+63 921 726 6441</a></p>
-    <form id="form">
-     <label for="yourname">Name</label>
-     <input type="text" id="yourname" name="yourname" required>
-     <label for="message">Message</label>
-     <textarea id="message" name="message" rows="5" required></textarea>
-     <button class="btn pri" type="submit">Compose email</button>
-    </form>
-    <p class="note">This opens your email app with the message ready. Nothing is sent until you press send there.</p>
+    <p>FB: Lance Bajar</p>
    </div>
   </section>
 
@@ -498,13 +484,6 @@ footer p{margin:0}
   var links=document.getElementById('links'),menu=document.getElementById('menu');
   menu.addEventListener('click',function(){var o=links.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
   links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){links.classList.remove('open');menu.setAttribute('aria-expanded',false)})});
-
-  /* contact form -> mailto */
-  document.getElementById('form').addEventListener('submit',function(e){
-    e.preventDefault();
-    var n=document.getElementById('yourname').value,m=document.getElementById('message').value;
-    location.href='mailto:lanceandlisa123@gmail.com?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(m+'\n\n'+n);
-  });
 
   /* ===== Omnitrix intro ===== */
   var intro=document.getElementById('intro'),
