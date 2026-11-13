@@ -57,7 +57,7 @@ section{padding:72px 0}
 .dial .d-ring.rev{animation-duration:11s;animation-direction:reverse}
 .dial .d-ticks{fill:none;stroke:var(--acc);stroke-width:12;stroke-dasharray:3 9;opacity:.85}
 .dial .d-arc{fill:none;stroke:var(--acc2);stroke-width:3;stroke-dasharray:120 40 60 40;opacity:.8}
-.dial .d-face{fill:url(#none);fill:#2fbf12;stroke:var(--acc);stroke-width:3;transition:fill .4s}
+.dial .d-face{fill:#2fbf12;stroke:var(--acc);stroke-width:3;transition:fill .3s}
 .dial .d-glyph{fill:#04120a;transform:scale(.78)}
 @keyframes spin{to{transform:rotate(360deg)}}
 
@@ -109,11 +109,28 @@ h1{font-size:clamp(2.4rem,6.4vw,4.4rem);line-height:1.02;margin-bottom:14px}
 .btn:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(93,255,46,.25)}
 .hero-dial{max-width:340px;margin:0 auto;text-align:center}
 .hero-dial .dial{filter:drop-shadow(0 0 34px rgba(93,255,46,.28))}
-.hero-dial figcaption{font-family:var(--mono);font-size:.8rem;color:var(--mute);margin-top:16px}
 .stats{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:20px}
 .stat{border-left:2px solid var(--acc);padding:4px 0 4px 16px;text-align:left}
 .stat small{display:block;font-family:var(--mono);font-size:.78rem;color:var(--mute)}
 .stat b{font-family:var(--head);font-weight:600;font-size:1.05rem}
+
+/* ---------- Clickable Omnitrix + form reveal ---------- */
+.dial-btn{display:block;width:100%;background:none;border:0;padding:0;cursor:pointer;border-radius:50%;-webkit-tap-highlight-color:transparent;transition:transform .2s}
+.dial-btn:hover{transform:scale(1.03)}
+.dial-btn:active .d-face{fill:#7dff52}
+.dial-btn.fire{animation:thump .55s}
+.dial-btn.fire .d-face{fill:#e6ffd9}
+.dial-btn.fire .d-ring{animation-duration:.5s}
+@keyframes thump{35%{transform:scale(.9)}70%{transform:scale(1.06)}}
+.form-out{display:flex;align-items:center;gap:14px;margin-top:20px;text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px 14px}
+.badge{flex:none;width:84px;height:84px;border-radius:50%;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle,#46e51f,#1c7a0a);border:3px solid var(--acc);box-shadow:0 0 22px rgba(93,255,46,.35)}
+.badge svg{width:46px;height:46px;fill:none;stroke:#04120a;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.badge img{width:100%;height:100%;object-fit:cover}
+.badge.pop{animation:pop .55s cubic-bezier(.2,.9,.3,1.4)}
+@keyframes pop{0%{transform:scale(.3) rotate(-90deg);opacity:0}100%{transform:none;opacity:1}}
+.form-out small{display:block;font-family:var(--mono);font-size:.74rem;color:var(--mute)}
+.form-out b{display:block;font-family:var(--head);font-size:1.25rem;line-height:1.2}
+.form-out span{display:block;font-size:.88rem;color:var(--mute);line-height:1.4;margin-top:2px}
 
 .js .st{opacity:0;transform:translateY(16px)}
 .ready .st{animation:rise .7s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0)*90ms)}
@@ -139,17 +156,6 @@ h1{font-size:clamp(2.4rem,6.4vw,4.4rem);line-height:1.02;margin-bottom:14px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}
 .skill h3{display:flex;align-items:center;gap:10px}
 .skill h3::before{content:"";width:8px;height:8px;background:var(--acc);transform:rotate(45deg);flex:none}
-.term{background:#030705;border:1px solid var(--line);border-radius:16px;overflow:hidden;font-family:var(--mono);font-size:.88rem}
-.term-bar{display:flex;gap:6px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line2);color:var(--mute);font-size:.78rem}
-.term-bar i{width:9px;height:9px;border-radius:50%;background:#2a3a31}
-.term-bar span{margin-left:8px}
-.term-body{padding:16px 18px}
-.term-body p{margin:0 0 6px;color:var(--mute)}
-.term-body .cmd{color:var(--acc)}
-.term-body .ok{color:var(--ink)}
-.term-body .ok b{color:var(--acc2);font-weight:500}
-.cursor{display:inline-block;width:8px;height:1em;background:var(--acc);vertical-align:-2px;animation:blink 1s steps(2) infinite}
-@keyframes blink{50%{opacity:0}}
 
 /* ---------- Tables ---------- */
 .tbl{overflow-x:auto;padding:8px 20px}
@@ -199,7 +205,7 @@ footer p{margin:0}
 @media(max-width:860px){
   .hero{grid-template-columns:1fr;text-align:center}
   .hero .lead{margin-inline:auto}.btns{justify-content:center}
-  .hero-dial{max-width:240px;order:-1}
+  .hero-dial{max-width:300px;order:-1}
   .stat{text-align:left}
   .about{grid-template-columns:1fr;text-align:center}
   .about .chips{justify-content:center}
@@ -213,7 +219,8 @@ footer p{margin:0}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .js .st{opacity:1;transform:none}.ready .st{animation:none}
-  .dial .d-ring,.cursor{animation:none}
+  .dial .d-ring{animation:none}
+  .dial-btn.fire,.badge.pop{animation:none}
 }
 </style>
 </head>
@@ -235,7 +242,7 @@ footer p{margin:0}
 <div class="intro" id="intro" role="dialog" aria-label="Intro animation">
  <button class="intro-skip" id="skip" type="button">Skip intro<kbd>Esc</kbd></button>
  <div class="intro-box">
-  <div class="intro-top">omnitrix // ace.exe online</div>
+  <div class="intro-top">omnitrix // Ben.Ace online</div>
   <button class="intro-dial" id="introDial" type="button" aria-label="Transform and enter the portfolio"></button>
   <div class="readout" aria-live="polite">
    <small id="formNum">Scanning forms</small>
@@ -251,7 +258,7 @@ footer p{margin:0}
  <div class="wrap bar">
   <a class="brand" href="#home" aria-label="Ace, back to top">
    <svg viewBox="-50 -70 100 140" aria-hidden="true"><polygon points="-42,-64 42,-64 0,-8"/><polygon points="-42,64 42,64 0,8"/></svg>
-   ace
+   Ace
   </a>
   <nav aria-label="Main navigation">
    <button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu</button>
@@ -282,19 +289,27 @@ footer p{margin:0}
      <a class="btn" href="#contact">Contact me</a>
     </div>
    </div>
-   <figure class="hero-dial st" style="--i:3" id="heroDial">
-    <figcaption>form: AI security + cloud</figcaption>
+   <figure class="hero-dial st" style="--i:3">
+    <button class="dial-btn" id="heroBtn" type="button" aria-label="Press the Omnitrix to transform into a random form"></button>
+    <div class="form-out" aria-live="polite">
+     <div class="badge" id="badge"></div>
+     <div>
+      <small id="fNum">form: AI security + cloud</small>
+      <b id="fName">Tap the Omnitrix</b>
+      <span id="fDesc">Press the dial to transform into a random form.</span>
+     </div>
+    </div>
    </figure>
    <div class="stats st" style="--i:5">
     <div class="stat"><small>now</small><b>Second-year BSIT student</b></div>
     <div class="stat"><small>focus</small><b>AI security · Cloud</b></div>
-    <div class="stat"><small>next</small><b>Let’s build something</b></div>
+    <div class="stat"><small>next</small><b>Let’s hold hands and build something</b></div>
    </div>
   </div>
 
   <section id="about">
-   <p class="kicker">The person behind the screen</p>
-   <h2>About me<i>.</i></h2>
+   <p class="kicker">This is me! Welcome to my Life</p>
+   <h2>All about me<i>.</i></h2>
    <div class="about">
     <div class="photo">
      <img src="bajar-pic.jpg" alt="Photo of Lance Christopher Bajar" width="240" height="290">
@@ -312,28 +327,19 @@ footer p{margin:0}
   </section>
 
   <section id="skills">
-   <p class="kicker">Things in my toolkit</p>
+   <p class="kicker">These are my toolkits</p>
    <h2>Technical skills<i>.</i></h2>
    <div class="grid">
     <article class="card skill"><h3>Languages</h3><ul class="chips"><li>Python</li><li>Java</li><li>JavaScript</li><li>SQL</li><li>PowerShell</li></ul></article>
     <article class="card skill"><h3>AI / ML</h3><ul class="chips"><li>PyTorch</li><li>Scikit-learn</li><li>NumPy</li><li>Pandas</li><li>Matplotlib</li></ul></article>
     <article class="card skill"><h3>Tools</h3><ul class="chips"><li>VS Code</li><li>Kiro</li><li>Claude Code</li><li>Codex</li><li>llama</li></ul></article>
     <article class="card skill"><h3>Systems / Networking</h3><ul class="chips"><li>Windows</li><li>Kali Linux</li><li>Cisco Networking Fundamentals</li></ul></article>
-    <div class="term" role="group" aria-label="Automation skills">
-     <div class="term-bar"><i></i><i></i><i></i><span>automation.exe</span></div>
-     <div class="term-body">
-      <p class="cmd">&gt; load_modules --automation</p>
-      <p class="ok">[ok] <b>Power Automate</b> flows</p>
-      <p class="ok">[ok] <b>RPA</b> bots</p>
-      <p class="ok">[ok] <b>SharePoint</b> lists</p>
-      <p class="cmd">&gt; <span class="cursor"></span></p>
-     </div>
-    </div>
+    <article class="card skill"><h3>Automation</h3><ul class="chips"><li>Power Automate</li><li>RPA</li><li>SharePoint</li></ul></article>
    </div>
   </section>
 
   <section id="education">
-   <p class="kicker">Where it all starts</p>
+   <p class="kicker">All about academics</p>
    <h2>Educational background<i>.</i></h2>
    <div class="card tbl">
     <table>
@@ -345,14 +351,15 @@ footer p{margin:0}
   </section>
 
   <section id="certifications">
-   <p class="kicker">Proof of the work</p>
+   <p class="kicker">My certifications</p>
    <h2>Honors &amp; certifications<i>.</i></h2>
    <div class="two">
     <div class="card">
      <h3>Honors &amp; activities</h3>
      <table>
       <tr><th>Title</th><th>Details</th></tr>
-      <tr><td>Consistent Dean’s Lister</td><td class="r">Last term GWA: 3.85<br>(first honor equivalent)</td></tr>
+      <tr><td>Consistent Dean’s Lister</td><td class="r">Last term GWA: 3.85<br>(First honor)</td></tr>
+      <tr><td>Consistent With Honor's</td><td class="r">Since Grade 7 to 12<td></tr>
       <tr><td>AppBuildersPH Hackathon 2026</td><td class="r">Participant</td></tr>
      </table>
     </div>
@@ -361,13 +368,14 @@ footer p{margin:0}
      <table>
       <tr><th>Title</th><th>Date</th></tr>
       <tr><td>NetOps Certified Engineer (NTO-101)</td><td class="r">Oct 2026</td></tr>
+      <tr><td>Enabling Cloud-Ready Teams: GCP Infrastructure Fundamentals </td><td class="r">March 19 2026</td></tr>
      </table>
     </div>
    </div>
   </section>
 
   <section id="projects">
-   <p class="kicker">From “what if” to “here it is”</p>
+   <p class="kicker">These is the only projects I have</p>
    <h2>My projects<i>.</i></h2>
    <p class="sec-sub">Things I have built or am building. More will land here as I ship them.</p>
 
@@ -400,7 +408,7 @@ footer p{margin:0}
   </section>
 
   <section id="goals">
-   <p class="kicker">Growing through every experience</p>
+   <p class="kicker">Where I’m heading next</p>
    <h2>My career goals<i>.</i></h2>
    <ol class="goals">
     <li><small>goal 01</small><h3>Become an AI Security Engineer</h3><p>Learn how to protect AI systems and the data they use.</p></li>
@@ -410,7 +418,7 @@ footer p{margin:0}
   </section>
 
   <section id="contact">
-   <p class="kicker">Good things start with a hello</p>
+   <p class="kicker">Don't be shy to email me</p>
    <h2>Let’s connect<i>.</i></h2>
    <div class="card contact">
     <p>Email: <a href="mailto:lanceandlisa123@gmail.com">lanceandlisa123@gmail.com</a></p>
@@ -442,7 +450,49 @@ footer p{margin:0}
   var tpl=document.getElementById('dial-tpl');
   function dial(){return tpl.content.firstElementChild.cloneNode(true)}
   document.getElementById('introDial').appendChild(dial());
-  var hd=document.getElementById('heroDial');hd.insertBefore(dial(),hd.firstChild);
+  var heroBtn=document.getElementById('heroBtn');heroBtn.appendChild(dial());
+
+  /* ===== Clickable Omnitrix: random "form" reveal =====
+     Each form is original (a skill of mine + a simple icon).
+     To use your own picture for a form, set img to a file name, e.g. img:'forms/python.png' */
+  var ICON={
+    hourglass:'<path d="M6 3h12l-6 8zM6 21h12l-6-8z"/>',
+    code:'<path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 5l-4 14"/>',
+    ai:'<circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 6l3.5 5M7 18l3.5-5M13.5 11L17 7M13.5 13L17 17"/>',
+    shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+    cloud:'<path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9.5 4.3 4.3 0 0 1 17.5 18z"/>',
+    gear:'<circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/>',
+    net:'<circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M11 6.8L6 16.2M13 6.8L18 16.2M7 18h10"/>'
+  };
+  var FORMS=[
+    {name:'Python',        icon:'code',   img:'', desc:'Scripts, data work, and quick prototypes.'},
+    {name:'AI / ML',       icon:'ai',     img:'', desc:'PyTorch and scikit-learn experiments.'},
+    {name:'Cybersecurity', icon:'shield', img:'', desc:'Learning to protect systems and data.'},
+    {name:'Cloud',         icon:'cloud',  img:'', desc:'Growing my cloud skills for my career goal.'},
+    {name:'Automation',    icon:'gear',   img:'', desc:'Power Automate flows and RPA bots.'},
+    {name:'Networking',    icon:'net',    img:'', desc:'Cisco fundamentals and NetOps certified.'}
+  ];
+  var badge=document.getElementById('badge'),fNum=document.getElementById('fNum'),
+      fName=document.getElementById('fName'),fDesc=document.getElementById('fDesc');
+  function svg(k){return '<svg viewBox="0 0 24 24" aria-hidden="true">'+ICON[k]+'</svg>'}
+  badge.innerHTML=svg('hourglass');
+  var last=-1,busy=false;
+  heroBtn.addEventListener('click',function(){
+    if(busy)return;busy=true;
+    var i;do{i=Math.floor(Math.random()*FORMS.length)}while(i===last&&FORMS.length>1);
+    last=i;var f=FORMS[i];
+    heroBtn.classList.remove('fire');void heroBtn.offsetWidth;heroBtn.classList.add('fire');
+    fNum.textContent='transforming...';
+    setTimeout(function(){
+      badge.classList.remove('pop');void badge.offsetWidth;
+      if(f.img){badge.innerHTML='';var im=new Image();im.src=f.img;im.alt=f.name+' form';im.onerror=function(){badge.innerHTML=svg(f.icon)};badge.appendChild(im)}
+      else{badge.innerHTML=svg(f.icon)}
+      badge.classList.add('pop');
+      fNum.textContent='form '+String(i+1).padStart(2,'0')+' / '+String(FORMS.length).padStart(2,'0');
+      fName.textContent=f.name;fDesc.textContent=f.desc;
+      heroBtn.classList.remove('fire');busy=false;
+    },450);
+  });
 
   /* mobile menu */
   var links=document.getElementById('links'),menu=document.getElementById('menu');
